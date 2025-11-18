@@ -1709,7 +1709,7 @@ ORDER BY SUM(tk.monto_ticket) DESC;
 
 -- CASO 3
 
-SELECT REPLACE(TRIM(TO_CHAR(t.numrut, '99G999G999')) || '-' || t.dvrut, ',', '.') AS "RUT Trabajador",
+SELECT REPLACE(TRIM(TO_CHAR(t.numrut, '99G999G999')), ',', '.') AS "RUT Trabajador",
        INITCAP(t.nombre || ' ' || t.appaterno) AS "Trabajador Nombre",
        EXTRACT(YEAR
                FROM t.fecing) AS "Año Ingreso",
@@ -1753,5 +1753,6 @@ WHERE (ec.fecter_estcivil IS NULL
      FROM est_civil
      WHERE numrut_t = t.numrut)
 ORDER BY t.numrut ASC;
+
 
 -- FIN CONSULTAS
